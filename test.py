@@ -6,7 +6,7 @@ import threading
 
 class Head:
     def __init__(self):
-        self.__distance = None
+        self.__distance = 100000
         self.__us_sensor = ev3.UltrasonicSensor()
         self.thread = threading.Thread(target=self.__read_sensor())
         self.thread.start()
