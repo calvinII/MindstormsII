@@ -8,6 +8,7 @@ class Head:
     def __init__(self):
         self.__distance = 100000
         self.__us_sensor = ev3.UltrasonicSensor()
+        assert self.__us_sensor.connected
         self.thread = threading.Thread(target=self.__read_sensor())
         self.thread.start()
         self.thread = threading.Thread(target=self.__action())
@@ -15,7 +16,7 @@ class Head:
 
     def __read_sensor(self):
         while True:
-            self.__distance = self.__us_sensor.distance_centimeters()
+            self.__distance = self.__us_sensor.distance_centimeters
             sleep(0.001)
 
     def __action(self):
