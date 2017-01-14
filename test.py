@@ -11,12 +11,12 @@ class Head(threading.Thread):
         self.daemon = True
         self.start()
         self.__distance = 100000
-        self.__us_sensor = ev3.UltrasonicSensor()
-        assert self.__us_sensor.connected
+        self.us_sensor = ev3.UltrasonicSensor()
+        assert self.us_sensor.connected
 
     def run(self):
         while True:
-            self.__distance = self.__us_sensor.distance_centimeters
+            self.__distance = self.us_sensor.distance_centimeters
             if self.__distance <= 100:
                 print("AAAAAhhh {}".format(self.__distance))
             sleep(0.01)
