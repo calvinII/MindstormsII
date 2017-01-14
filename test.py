@@ -9,10 +9,12 @@ class Head:
         self.__distance = 100000
         self.__us_sensor = ev3.UltrasonicSensor()
         assert self.__us_sensor.connected
-        self.thread = threading.Thread(target=self.__read_sensor())
-        self.thread.start()
-        self.thread = threading.Thread(target=self.__action())
-        self.thread.start()
+        self.__read_thread = threading.Thread(target=self.__read_sensor())
+        self.__read_thread.setDaemon(True)
+        self.__read_thread.start()
+        self.__action_thread = threading.Thread(target=self.__action())
+        self.__action_thread.setDaemon(True)
+        self.__action_thread.start()
 
     def __read_sensor(self):
         print("Reading Sensors")
