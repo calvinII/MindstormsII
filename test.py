@@ -5,6 +5,7 @@ import ev3dev.ev3 as ev3
 
 btn = ev3.Button()
 
+print("starting!")
 while True:
     if btn.any():    # Checks if any button is pressed.
         print("Wow")
