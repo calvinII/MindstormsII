@@ -21,21 +21,9 @@ class Head(threading.Thread):
                 print("AAAAAhhh {}".format(self.__distance))
             sleep(0.01)
 
-
-    def __read_sensor(self):
-        print("Reading Sensors")
-        while True:
-            self.__distance = self.__us_sensor.distance_centimeters
-            sleep(0.1)
-
-    def __action(self):
-        print("Checking Sensor")
-        while True:
-            if self.__distance <= 100:
-                print(self.__distance)
-            sleep(0.1)
-
-
 head = Head()
-sleep(100)
+while True:
+    print("hmmmm")
+    sleep(2)
+
 
