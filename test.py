@@ -7,6 +7,7 @@ btn = ev3.Button()
 
 while True:
     if btn.any():    # Checks if any button is pressed.
+        print("Wow")
         exit()
     else:
         sleep(0.01)  # Check for button press every 0.01 second
