@@ -7,7 +7,7 @@ import threading
 
 class Head(threading.Thread):
     def __init__(self):
-        super().__init__(self)
+        threading.Thread.__init__(self)
         self.daemon = True
         self.start()
         self.__distance = 100000
