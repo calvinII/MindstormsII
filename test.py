@@ -9,7 +9,6 @@ class Head(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.daemon = True
-        self.start()
         self.__distance = 100000
         self.__us_sensor = ev3.UltrasonicSensor()
         assert self.__us_sensor.connected
@@ -22,6 +21,7 @@ class Head(threading.Thread):
             sleep(0.01)
 
 head = Head()
+head.start()
 while True:
     print("hmmmm")
     sleep(2)
