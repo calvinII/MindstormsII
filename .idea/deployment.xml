@@ -5,7 +5,7 @@
       <paths name="Copy of project-level server 'Lisa'">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/robot/MindstormsII" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/MindstormsII" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
