@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Copy of project-level server 'Lisa'">
+  <component name="PublishConfigData" serverName="Copy of project-level server 'Lisa'" uploadOnCheckin="1dbc0300-0517-46df-8d54-62e4bb12cb20">
     <serverData>
       <paths name="Copy of project-level server 'Lisa'">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="Copy of project-level server 'Lisa'" />
   </component>
 </project>
