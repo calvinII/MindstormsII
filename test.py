@@ -6,10 +6,11 @@ import threading
 
 
 class Head(threading.Thread):
-    def __init__(self):
+    def __init__(self, bite_distance=400):
         threading.Thread.__init__(self)
         self.daemon = True
         self.__distance = 100000
+        self.__bite_distance = bite_distance
         self.__us_sensor = ev3.UltrasonicSensor()
         self.__head_motor = ev3.MediumMotor('outB')
         self.__head_motor.reset()
@@ -25,8 +26,9 @@ class Head(threading.Thread):
     def run(self):
         while True:
             self.__distance = self.__us_sensor.distance_centimeters
-            if self.__distance <= 400:
+            if self.__distance <= self.__bite_distance:
                 self.__bite()
+                # Warten bis der Kopf eingezogen ist
                 sleep(2)
             sleep(0.01)
 
