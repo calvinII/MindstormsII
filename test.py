@@ -27,6 +27,7 @@ class Head(threading.Thread):
             self.__distance = self.__us_sensor.distance_centimeters
             if self.__distance <= 400:
                 self.__bite()
+                sleep(2)
             sleep(0.01)
 
 head = Head()
