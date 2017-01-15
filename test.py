@@ -17,10 +17,10 @@ class Head(threading.Thread):
 
     def __bite(self):
         self.__head_motor.polarity = 'inversed'
-        self.__head_motor.run_to_abs_pos(position_sp=180, speed=900, stop_action='hold')
+        self.__head_motor.run_to_abs_pos(position_sp=180, speed_sp=900, stop_action='hold')
         sleep(1)
         self.__head_motor.polarity = 'inversed'
-        self.__head_motor.run_to_abs_pos(position_sp=0, speed=500, stop_action='coast')
+        self.__head_motor.run_to_abs_pos(position_sp=0, speed_sp=500, stop_action='coast')
 
     def run(self):
         while True:
