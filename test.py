@@ -32,10 +32,11 @@ class Head(threading.Thread):
                 sleep(2)
             sleep(0.01)
 
+
 head = Head()
 head.start()
 while True:
-    print("hmmmm")
+    print("hmmmm hmmmmh")
     sleep(2)
 
 
